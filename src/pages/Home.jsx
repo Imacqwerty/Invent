@@ -7,29 +7,6 @@ const hero4Ref = useRef(null);
 const titleref = useRef(null);
 const homeref = useRef(null);
 
- useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-      // Force play on load and on any user interaction
-      const playVideo = () => {
-        video.play().catch(err => {
-          console.log('Autoplay prevented, will play on interaction');
-        });
-      };
-      
-      playVideo();
-      
-      // Try again on first click anywhere
-      const handleClick = () => {
-        playVideo();
-        document.removeEventListener('click', handleClick);
-      };
-      document.addEventListener('click', handleClick);
-      
-      return () => document.removeEventListener('click', handleClick);
-    }
-  }, []);
-
   const scrollToHero4 = () => {
     hero4Ref.current?.scrollIntoView({ behavior: 'smooth'});
   }
@@ -137,10 +114,10 @@ const homeref = useRef(null);
     </section>
     {/*END HERO 4 */}
 
-    <foooter className={style.homefooter}>
+    <footer className={style.homefooter}>
       <p>Invent 2026</p>
       <p>Made with ReactJS</p>
-    </foooter>
+    </footer>
 
 
     </div>
