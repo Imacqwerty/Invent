@@ -195,3 +195,12 @@
   padding: 2rem;
   color: white;
 }
+
+.profile2 {
+  text-decoration: none;
+  color: white;
+}
+
+.profile2:hover {
+  color: greenyellow;
+}

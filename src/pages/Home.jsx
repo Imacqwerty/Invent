@@ -117,6 +117,7 @@ const homeref = useRef(null);
     <footer className={style.homefooter}>
       <p>Invent 2026</p>
       <p>Made with ReactJS</p>
+      <a href="https://imacqwerty.github.io/Hireme-Kent/" className={style.profile2}>2nd Portfolio</a>
     </footer>
 
 
