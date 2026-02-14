@@ -1,11 +1,75 @@
 import { Link } from 'react-router-dom';
 import style from './styles/Homestyle.module.css';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 function Home() {
 const hero4Ref = useRef(null);
 const titleref = useRef(null);
 const homeref = useRef(null);
+
+//Below is for Parallax Effect
+const hero1Ref = useRef(null);
+const hero2Ref = useRef(null);
+const hero3Ref = useRef(null);
+const [isHero1Visible, setIsHero1Visible] = useState(false);
+const [isHero2Visible, setIsHero2Visible] = useState(false);
+const [isHero3Visible, setIsHero3Visible] = useState(false);
+const [isHero4Visible, setIsHero4Visible] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => {
+    // Hero 1
+    if (hero1Ref.current) {
+      const rect = hero1Ref.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      if (rect.top < windowHeight * 0.8 && rect.bottom > 0) {
+        setIsHero1Visible(true);
+      } else {
+        setIsHero1Visible(false);
+      }
+    }
+
+    // Hero 2
+    if (hero2Ref.current) {
+      const rect = hero2Ref.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      if (rect.top < windowHeight * 0.8 && rect.bottom > 0) {
+        setIsHero2Visible(true);
+      } else {
+        setIsHero2Visible(false);
+      }
+    }
+
+    // Hero 3
+    if (hero3Ref.current) {
+      const rect = hero3Ref.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      if (rect.top < windowHeight * 0.8 && rect.bottom > 0) {
+        setIsHero3Visible(true);
+      } else {
+        setIsHero3Visible(false);
+      }
+    }
+
+    // Hero 4
+    if (hero4Ref.current) {
+      const rect = hero4Ref.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      if (rect.top < windowHeight * 0.8 && rect.bottom > 0) {
+        setIsHero4Visible(true);
+      } else {
+        setIsHero4Visible(false);
+      }
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
+
+//Ending for Parallax Effect
+
 
   const scrollToHero4 = () => {
     hero4Ref.current?.scrollIntoView({ behavior: 'smooth'});
@@ -36,7 +100,7 @@ const homeref = useRef(null);
 
 
     {/*HERO 1 */}
-    <section className={style.homehero1} > 
+    <section className={`${style.homehero1} ${isHero1Visible ? style.visible : ''}`} ref={hero1Ref}>
       <img src="/Invent/1.jpg" className={style.hero1img}></img>
         <div className={style.hero1intro1}>
           <h1><strong>Welcome to Invent</strong></h1>
@@ -53,7 +117,7 @@ const homeref = useRef(null);
     </section>
 
     {/*HERO 2 */}
-    <section className={style.homehero2}> 
+    <section className={`${style.homehero2} ${isHero2Visible ? style.visible : ''}`} ref={hero2Ref}>
       <div className={style.hero2intro1}>
         <h1>Alumni System</h1>
         <p>Made with HTML, CSS, JavaScript, Php and MySQL</p>
@@ -67,7 +131,7 @@ const homeref = useRef(null);
 
     {/*HERO 3 */}
 
-    <section className={style.homehero3}>
+    <section className={`${style.homehero3} ${isHero3Visible ? style.visible : ''}`} ref={hero3Ref}>
 
        <div className={style.hero3intro2}>
         <img src="/Invent/Ace.png"></img>
@@ -84,7 +148,7 @@ const homeref = useRef(null);
 
         {/*HERO 4 */}
 
-    <section className={style.homehero4}>
+    <section className={`${style.homehero4} ${isHero4Visible ? style.visible : ''}`} ref={hero4Ref}>
 
        <div className={style.hero4intro1}>
         <h1>ABOUT ME</h1><br />

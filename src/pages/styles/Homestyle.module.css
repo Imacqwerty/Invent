@@ -127,11 +127,22 @@
   padding: 2rem;
   justify-content: space-between;
   align-items: center;
+  /*Below is for the Parallax Effect*/
+  position: relative;
+  overflow: hidden;
 }
 
 .homehero2 img {
   width: 55vw;
   border-radius: 2rem;
+  /*Below is for the Parallax Effect*/
+  transition: transform 0.5s ease-out;
+  will-change: transform;
+}
+
+/* Parallax effect on scroll */
+.homehero2:hover img {
+  transform: scale(1.05);
 }
 
 .hero2intro1 {
@@ -147,6 +158,9 @@
   align-items: center;
   background-color: #03122b;
   color: white;
+  /*Below is for the Parallax Effect*/
+  position: relative;
+  overflow: hidden;
 }
 
 .hero3intro1 {
@@ -156,6 +170,14 @@
 .homehero3 img {
   width: 55vw;
   border-radius: 2rem;
+  /*Below is for the Parallax Effect*/
+  transition: transform 0.5s ease-out;
+  will-change: transform;
+}
+
+/* Parallax effect on scroll */
+.homehero3:hover img {
+  transform: scale(1.05);
 }
 
 .homehero4 {
@@ -184,6 +206,13 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  /*Below is for the Parallax Effect*/
+  transition: transform 0.5s ease-out;
+  will-change: transform;
+}
+
+.techimage:hover img {
+  transform: scale(1.2);
 }
 
 .homefooter {
@@ -203,4 +232,23 @@
 
 .profile2:hover {
   color: greenyellow;
+}
+
+/* Scroll Reveal Animation Parallax Effect*/
+/* Scroll Reveal Animation */
+.homehero1,
+.homehero2,
+.homehero3,
+.homehero4 {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.homehero1.visible,
+.homehero2.visible,
+.homehero3.visible,
+.homehero4.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
