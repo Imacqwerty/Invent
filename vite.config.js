@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/Invent/',  // ← Important for GitHub Pages
+  base: '/invent/',  // ← Important for GitHub Pages
 })

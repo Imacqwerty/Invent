@@ -101,7 +101,7 @@ useEffect(() => {
 
     {/*HERO 1 */}
     <section className={`${style.homehero1} ${isHero1Visible ? style.visible : ''}`} ref={hero1Ref}>
-      <img src="/Invent/1.jpg" className={style.hero1img}></img>
+      <img src="/invent/1.jpg" className={style.hero1img}></img>
         <div className={style.hero1intro1}>
           <h1><strong>Welcome to Invent</strong></h1>
           <p>Created with ReactJS Framework</p>
@@ -124,7 +124,7 @@ useEffect(() => {
         <p>By Kent Quilao</p>
         </div>
         <div className={style.hero2intro2}>
-          <img src="/Invent/alumni.png"></img>
+          <img src="/invent/alumni.png"></img>
         </div>
     </section>
     {/*END HERO 2 */}
@@ -134,7 +134,7 @@ useEffect(() => {
     <section className={`${style.homehero3} ${isHero3Visible ? style.visible : ''}`} ref={hero3Ref}>
 
        <div className={style.hero3intro2}>
-        <img src="/Invent/Ace.png"></img>
+        <img src="/invent/Ace.png"></img>
       </div>
 
       <div className={style.hero3intro1}>
@@ -160,11 +160,11 @@ useEffect(() => {
       <div className={style.hero4intro2} ref={hero4Ref}>
         <h2>Technology Stacks</h2>
         <div className={style.techstacks}>
-          <div className={style.techimage}><img src="/Invent/react.png" className={style.img1}/></div>
-          <div className={style.techimage}><img src="/Invent/laravel.png" className={style.img2}/></div>
-          <div className={style.techimage}><img src="/Invent/html.png" className={style.img3}/></div>
-          <div className={style.techimage}><img src="/Invent/css.png" className={style.img4}/></div>
-          <div className={style.techimage}><img src="/Invent/javascript.png" className={style.img5}/></div>
+          <div className={style.techimage}><img src="/invent/react.png" className={style.img1}/></div>
+          <div className={style.techimage}><img src="/invent/laravel.png" className={style.img2}/></div>
+          <div className={style.techimage}><img src="/invent/html.png" className={style.img3}/></div>
+          <div className={style.techimage}><img src="/invent/css.png" className={style.img4}/></div>
+          <div className={style.techimage}><img src="/invent/javascript.png" className={style.img5}/></div>
 
           
           
